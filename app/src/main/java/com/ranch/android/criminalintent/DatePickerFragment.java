@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Instrumentation;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,22 @@ public class DatePickerFragment extends DialogFragment {
     public static final String ARG_DATE = "date";
     public static final String EXTRA_DATE = "com.android.criminalintent.date";
     private DatePicker mDatePicker;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
     private void sendResult(int resultCode, Date date){
         if(getTargetFragment() == null){

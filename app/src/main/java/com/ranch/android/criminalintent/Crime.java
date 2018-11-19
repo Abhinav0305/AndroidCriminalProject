@@ -1,5 +1,6 @@
 package com.ranch.android.criminalintent;
 
+import java.io.File;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,12 +10,17 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
 
     public Crime(){
         mId = UUID.randomUUID();
         mDate = new Date();
     }
 
+    public Crime(UUID id){
+        mId = id;
+        mDate = new Date();
+    }
     public UUID getmId() {
         return mId;
     }
@@ -45,5 +51,17 @@ public class Crime {
 
     public void setmSolved(boolean mSolved) {
         this.mSolved = mSolved;
+    }
+
+    public String getmSuspect() {
+        return mSuspect;
+    }
+
+    public void setmSuspect(String mSuspect) {
+        this.mSuspect = mSuspect;
+    }
+
+    public String getPhotoFilename(){
+        return "IMG_"+getmId().toString()+".jpg";
     }
 }
